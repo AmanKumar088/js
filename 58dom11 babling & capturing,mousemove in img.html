@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       
+        .first{
+            background-color: red;
+            width: 30%;
+            padding: 100px;
+        }
+        .second{
+            background-color: rgb(21, 202, 75);
+            padding: 100px;
+        }
+        .third{
+            background-color: rgb(89, 12, 205);
+            padding: 100px;
+        }
+
+
+        .move{
+            width: 600px;
+            height: 600px;
+            background-color: orange;
+        }
+        #chuha{
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Qusetion (1) -->
+
+    <!-- <h1 id="bharo"></h1>
+    <div class="first">
+        <div class="second">
+            <div class="third">
+
+            </div>
+        </div> -->
+    </div>
+    <script>
+        // var first = document.querySelector(".first");
+        // var second = document.querySelector(".second");
+        // var third = document.querySelector(".third");
+
+        // first.addEventListener("click",function(){
+        //     console.log("hiii")
+        //     bharo.textContent = "first Bhar diya";
+        // },true)
+        // second.addEventListener("click",function(){
+        //   //  event.stopPropagation();
+        //     bharo.textContent = "second bhar diya";
+        // },true)
+
+        // third.addEventListener("mousemove",function(){
+        //    // event.stopPropagation();
+        
+        //     bharo.textContent = "third Bhar diya";
+        // },true)
+
+
+    </script>
+
+
+<!-- Qusetion (2) ek div hai os ke ander mai img hai ager div ke uper mouse leke jaye ge to saath mai move kr rega-->
+
+    <div class="move">
+    <img src = "./R.png" width="50" height="50" id="chuha">
+    </div>
+
+    <script>
+        var move = document.querySelector(".move");
+        var chuha = document.querySelector("#chuha");
+
+        move.addEventListener('mousemove',function(){
+            console.log(event.clientX+" X-move-Y "+event.clientY)
+            chuha.style.left = event.clientX+"px";
+            chuha.style.top = event.clientY+"px";
+        })
+    </script>
+</body>
+</html>

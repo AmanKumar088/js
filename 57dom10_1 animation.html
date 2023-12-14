@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .main {
+            width: 100%;
+            padding: 30px;
+            background-color: gray;
+            color: #fff
+        }
+
+        .main2 {
+            width: 100%;
+            padding: 30px;
+            background-color: gray;
+            color: #fff;
+            background-color: orange;
+            visibility: hidden;
+        }
+
+        .main3 {
+            width: 100%;
+            padding: 30px;
+        }
+
+        .main3 .first {
+            width: 48%;
+            display: inline-block;
+            height: 300px;
+            background-color: red;
+            visibility: hidden;
+            position: relative;
+        }
+
+        .main3 .second {
+            width: 48%;
+            display: inline-block;
+            height: 300px;
+            background-color: rgb(53, 6, 180);
+            visibility: hidden;
+            position: relative;
+        }
+
+        .anim1 {
+            animation-name: nichechalo;
+            animation-duration: 1s;
+            animation-timing-function: ease-in;
+            animation-fill-mode: forwards;
+            animation-iteration-count: 1;
+            visibility: visible;
+            opacity: 0;
+
+
+        }
+
+        @keyframes nichechalo {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .first_anim {
+            animation-name: first;
+            animation-duration: 1s;
+            animation-timing-function: ease-in;
+            animation-fill-mode: forwards;
+            animation-iteration-count: 1;
+            visibility: visible;
+            opacity: 0;
+
+
+        }
+
+        .second_anim {
+            animation-name: second;
+            animation-duration: 1s;
+            animation-delay: 1s;
+            animation-timing-function: ease-in;
+            animation-fill-mode: forwards;
+            animation-iteration-count: 1;
+            visibility: visible;
+            opacity: 0;
+        }
+
+        @keyframes first {
+            from {
+                visibility: hidden;
+                opacity: 0;
+                left: -20px
+            }
+
+            to {
+                visibility: visible;
+                opacity: 1;
+                left: 0px;
+            }
+        }
+
+        @keyframes second {
+            from {
+                visibility: hidden;
+                opacity: 0;
+                right: -20px;
+
+            }
+
+            to {
+                visibility: visible;
+                opacity: 1;
+                right: 0px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Error consequuntur expedita, ab molestiae earum
+            esse nesciunt corrupti dolorum alias ipsa repellendus rem omnis tempore deserunt libero voluptates officia
+            ullam perspiciatis! Sunt corporis perferendis aperiam commodi ex vero quas culpa expedita, consequuntur
+            laudantium fugiat eos harum aliquid earum sit dicta inventore, maiores autem. Nisi sint veritatis non sunt a
+            doloremque at aliquid, commodi id labore doloribus. Suscipit id ad porro nisi, ratione ullam. Quod autem
+            eaque beatae earum repellat ipsum consectetur rem sed quaerat debitis ipsam ab sunt officia voluptates natus
+            quae, illum enim amet aut id veritatis, voluptatem exercitationem placeat. Dolorem consequatur dolores
+            tempore maiores? Esse, eligendi. Blanditiis, ratione quidem tenetur alias vero nemo dolor laborum iusto ex
+            culpa suscipit? Tempore, doloremque necessitatibus minus, dolorum maiores aperiam illum excepturi deserunt
+            neque quod suscipit dolores, non sequi voluptates! In facilis neque voluptate voluptas, quae libero possimus
+            atque nulla dolore eaque fugit aperiam asperiores hic, unde vel quia blanditiis sunt aspernatur fuga
+            distinctio repellat deleniti aut? Illum debitis corporis hic iure, fugiat sit magni enim voluptatibus
+            sapiente tempore molestias animi repellendus ad eveniet, aspernatur blanditiis. Voluptas earum distinctio
+            eos necessitatibus incidunt ipsam perspiciatis ea expedita dolores doloremque, quaerat rerum labore
+            accusantium in consectetur ipsa qui voluptates? Libero reprehenderit dolorem aspernatur facere repellat,
+            temporibus vel eaque laboriosam, aliquid unde obcaecati harum non autem cumque et assumenda molestias illum.
+            Ipsam veniam sequi libero quaerat quae minus necessitatibus, doloremque at natus, aperiam unde laborum
+            voluptates odio repellendus inventore modi veritatis, perferendis quas alias facilis assumenda iusto
+            voluptatum facere similique. Fuga at facere aspernatur iste a, fugiat laboriosam neque harum, itaque
+            voluptatibus voluptatem id, blanditiis porro laudantium repellendus. Laudantium, qui maiores nostrum sed
+            minus aspernatur odio cupiditate! Modi deleniti assumenda nostrum exercitationem at excepturi ducimus animi
+            cumque dolores quos, laudantium nam corrupti, sit ab nisi voluptas.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores eaque illo suscipit asperiores ea natus
+            tempore repudiandae, eos voluptatem illum id nesciunt magni, ratione aut veritatis laborum fugiat ipsa
+            dolorem harum mollitia accusantium sed dolor facere est? Mollitia dolore impedit eos aperiam nihil, velit,
+            est reiciendis facere voluptates asperiores cumque laudantium error expedita vel culpa obcaecati deserunt
+            exercitationem totam eaque. Exercitationem odit, doloribus itaque numquam aut saepe, adipisci eius aliquam,
+            dicta qui totam eaque eveniet? Mollitia eius, provident dicta ab ipsum deserunt, dolore est maiores impedit
+            excepturi nihil doloribus ipsa ad sed consequatur eos officiis accusamus odit tenetur eligendi nemo.
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil repellat officia nostrum nemo consequatur
+            ex, a at fuga voluptatibus odio cupiditate molestiae molestias accusamus harum magnam delectus perferendis
+            doloremque incidunt. Tenetur laudantium eos laborum possimus aspernatur inventore dolor repellat est?
+            Quaerat quas, sequi, eveniet, consectetur dicta quia itaque obcaecati illum reprehenderit laborum quae
+            maiores ad doloribus iure laudantium dolores iusto officia sapiente! Sint mollitia natus corrupti aperiam
+            ipsam eum, quod odit earum, facilis a aliquid voluptas amet dolor consequatur. Amet quae nulla, iusto est,
+            ea placeat voluptatum atque animi ipsum qui minima dolorem facilis consequatur aut ducimus, iste incidunt
+            expedita? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus, assumenda id? Adipisci
+            reiciendis reprehenderit ex fugiat vitae, dicta fugit ratione, ipsam quia harum obcaecati, similique maiores
+            quae deserunt quidem at?lo
+        </p>
+    </div>
+
+    <div class="main2">
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Error consequuntur expedita, ab molestiae earum
+            esse nesciunt corrupti dolorum alias ipsa repellendus rem omnis tempore deserunt libero voluptates officia
+            ullam perspiciatis! Sunt corporis perferendis aperiam commodi ex vero quas culpa expedita, consequuntur
+            laudantium fugiat eos harum aliquid earum sit dicta inventore, maiores autem. Nisi sint veritatis non sunt a
+            doloremque at aliquid, commodi id labore doloribus. Suscipit id ad porro nisi, ratione ullam. Quod autem
+            eaque beatae earum repellat ipsum consectetur rem sed quaerat debitis ipsam ab sunt officia voluptates natus
+            quae, illum enim amet aut id veritatis, voluptatem exercitationem placeat. Dolorem consequatur dolores
+            tempore maiores? Esse, eligendi. Blanditiis, ratione quidem tenetur alias vero nemo dolor laborum iusto ex
+            culpa suscipit? Tempore, doloremque necessitatibus minus, dolorum maiores aperiam illum excepturi deserunt
+            neque quod suscipit dolores, non sequi voluptates! In facilis neque voluptate voluptas, quae libero possimus
+            atque nulla dolore eaque fugit aperiam asperiores hic, unde vel quia blanditiis sunt aspernatur fuga
+            distinctio repellat deleniti aut? Illum debitis corporis hic iure, fugiat sit magni enim voluptatibus
+            sapiente tempore molestias animi repellendus ad eveniet, aspernatur blanditiis. Voluptas earum distinctio
+            eos necessitatibus incidunt ipsam perspiciatis ea expedita dolores doloremque, quaerat rerum labore
+            accusantium in consectetur ipsa qui voluptates? Libero reprehenderit dolorem aspernatur facere repellat,
+            temporibus vel eaque laboriosam, aliquid unde obcaecati harum non autem cumque et assumenda molestias illum.
+            Ipsam veniam sequi libero quaerat quae minus necessitatibus, doloremque at natus, aperiam unde laborum
+            voluptates odio repellendus inventore modi veritatis, perferendis quas alias facilis assumenda iusto
+            voluptatum facere similique. Fuga at facere aspernatur iste a, fugiat laboriosam neque harum, itaque
+            voluptatibus voluptatem id, blanditiis porro laudantium repellendus. Laudantium, qui maiores nostrum sed
+            minus aspernatur odio cupiditate! Modi deleniti assumenda nostrum exercitationem at excepturi ducimus animi
+            cumque dolores quos, laudantium nam corrupti, sit ab nisi voluptas.
+        </p>
+    </div>
+
+
+    <div class="main3">
+        <div class="first">
+
+        </div>
+        <div class="second">
+
+        </div>
+    </div>
+
+    <script>
+        var main2 = document.querySelector(".main2");
+        var first = document.querySelector(".first");
+        var second = document.querySelector(".second");
+        window.onscroll = function () {
+            var scroll_no = document.documentElement.scrollTop;
+
+            if (scroll_no > 300) {
+                main2.classList.add('anim1')
+            }
+            if (scroll_no > 600) {
+                console.log(scroll_no)
+                first.classList.add("first_anim")
+                second.classList.add("second_anim")
+            }
+
+        }
+    </script>
+</body>
+
+</html>

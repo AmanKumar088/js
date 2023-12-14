@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="myform">
+        <p><input type="text" name="empName"  class="field" placeholder="Enter Your Name"></p>
+        <p><input type="text" name="empEmail" class="field" placeholder="Enter Your Email"></p>
+        <p><input type="text" name="empMobile" class="field" placeholder="Enter Your Mobile No"></p>
+        <p><input type="text" name="empAddress" class="field" placeholder="Enter Your Mobile No"></p>
+        <p><input type="text" name="empAge" class="field" placeholder="Enter Your Mobile No"></p>
+        <p><input type="text" name="empPincode" class="field" placeholder="Enter Your Mobile No"></p>
+        <p><input type="text" name="empMaritalStatus" class="field" placeholder="Enter Your Mobile No"></p>
+        <p><input type="text" name="empSingleStatus" class="field" placeholder="Enter Your Mobile No"></p>
+        <p><input type="text" name="empInstaAccountKitneHai" class="field" placeholder="Enter Your Mobile No"></p>
+        <p><input type="text" name="empFakeAccountKitneHai" class="field" placeholder="Enter Your Mobile No"></p>
+        <p><input type="text" name="empPassword" class="field" placeholder="Enter Your Mobile No"></p>
+        <p><input type="text" name="empFakePassword" class="field" placeholder="Enter Your Mobile No"></p>
+        <p><input type="text" name="empJoko" class="field" placeholder="Enter Your Mobile No"></p>
+        <p><input type="text" name="empLoko" class="field" placeholder="Enter Your Mobile No"></p>
+        <p><input type="text" name="empJobCity" class="field" placeholder="Enter Your Mobile No"></p>
+        <p><input type="text" name="empSalary" class="field" placeholder="Enter Your Mobile No"></p>
+               <p>
+            <select name="empCity" class="field">
+                <option value="">Select City</option>
+                <option value="delhi">delhi</option>
+                <option value="mumbai">mumbai</option>
+                <option value="chennai">chennai</option>
+                <option value="surat">surat</option>
+            </select>
+        </p>
+        <p><input type="submit" id="btn" value="Register"></input></p>
+    </form>
+
+    <script>
+          myform.onsubmit = function(event){
+          event.preventDefault()
+        //    const fields =  document.getElementsByClassName("field");
+        //    var obj_me_dalo = {}
+        //    for(let i = 0;i<fields.length;i++){
+        //     obj_me_dalo[fields[i].name] =  fields[i].value;
+        //    }
+        //    console.log(obj_me_dalo)
+
+
+            function Employee(){
+
+            }
+          var obj_me_dalo = new Employee()
+          document.querySelectorAll(".field").forEach(ele=>{
+            obj_me_dalo[ele.name] =  ele.value;
+          })
+           console.log(obj_me_dalo)
+        }
+    </script>
+</body>
+</html>

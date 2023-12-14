@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+
+    <button onclick="callApi()">Data Mangao nA</button>
+    <div id="kumar">
+
+    </div>
+    <script>
+
+        /* 
+        # Api full from(Application progarmming interface)
+
+        # Api data provide (Intergreted) [Rest APi bhi bol te hai]
+
+        # Data ko json file mai covert kr deta hai jis se ki (Transpotances Ease)
+
+        # json file ka data object mai recive hoga
+
+        # js & other progarmming laguage ko convert json ko prash mai deta hai
+
+
+
+        # Url two types:-
+
+        (1)Absolute URL
+       
+        (2)Relative URL 
+
+
+
+        # http method:-**Improtent 1 to 4
+
+        (1)get(defult hoti hai)
+
+        (2)post
+
+        (3)put
+
+        (4)delete
+
+        (5)treace
+
+        (6)options
+
+        (7)head
+
+
+        #host name:-www.com
+
+
+        #two Api calling:-
+
+        (1)XMLHttpRequest
+        (2)fetch
+
+
+        */
+
+
+        async function callApi(){
+            var url = "https://reqres.in/api/users?page=2";
+           const res =  await fetch(url);
+           const obj = await res.json()
+            var da = obj.data.map(ele=>{
+                return `<p>${ele.first_name}</p>`
+            })
+          kumar.innerHTML = da.join(" ");
+
+      }
+    
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .popup{
+            width: 400px;
+            height: 400px;
+            background-color: red;
+            position: absolute;
+            left: 50%;
+            top:50%;
+            transform: translate(-50%,-50%);
+            box-shadow: 0px 3px 5px rgba(0,0,0,0.5);
+            display: none;
+
+
+        }
+
+        .show{
+            display: block;
+        }
+
+        .input{
+            padding: 5px;
+            border:1px solid black;
+            border-radius: 5px;
+        }
+
+        .l{
+            padding: 5px;
+            background-color: lightgray;
+            border-radius: 5px;
+            width: 20%;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-top: 10px;
+        }
+        .delete_karo{
+            color:red;
+            margin-left:80px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<!--Question (1) :- sign ke button par click kre to popup open ho jaye os mai close ka incon bhi hona chaiye -->
+
+    <!-- <button id="btn">Sign In</button>
+    <div class="popup show">
+            <button id="closeBtn">Close X</button>
+    </div> -->
+    <script>
+        // (function(){
+        //     var btnEle = document.querySelector("#btn");
+        //     var popup = document.querySelector(".popup");
+        //     var closeBtn = document.querySelector("#closeBtn");
+        //     btnEle.addEventListener("click",()=>{
+        //         popup.classList.add("show")
+        //     })
+        //     closeBtn.addEventListener("click",()=>{
+        //         popup.classList.remove("show")
+        //     })
+        // })();
+    </script>
+
+
+<!--Question (2) ek input box hai jis mai ki skills mai type kre to input ke niche output hone chaiye un ke saath mai close ka bhi aana chaiye or input mai se bhi hat jayega -->
+
+
+<input type="text" class="input" placeholder="Enter Your Skills (Seprated with ,)">
+<ul id="skills">
+   
+</ul>
+
+<script>
+
+//--------------------problem-------------------
+
+    // (function(){
+    //     var input = document.querySelector(".input");
+    //     var samunder_ke_lootere =  document.querySelector("#skills");
+    //     input.addEventListener('keyup',function(){
+    //         var inputData = this.value;
+    //         var dataArr =  inputData.split(",")
+    //         var strEle = dataArr.map(value=>`
+    //             <li class='l'>${value} <span class="delete_karo">X</span></li>
+    //             `
+    //         )
+    //         samunder_ke_lootere.innerHTML = strEle.join(" ");
+    //         deleteKaro(dataArr)
+    //     })
+
+    //     function deleteKaro(dataArr){
+    //         var deleteKaro = document.querySelectorAll(".delete_karo")
+    //         deleteKaro.forEach((ele,index)=>{
+    //             ele.addEventListener('click',()=>{
+    //                 samunder_ke_lootere.children[index].remove()
+    //                 dataArr.splice(index,1);
+    //                 console.log(index,dataArr)
+    //               //  input.value = dataArr.join(",")
+    //             })
+    //         })
+    //     }
+    // })();
+
+
+    //--------------------problem slove-----------------
+    
+    // 
+
+    (function(){
+        var input = document.querySelector(".input");
+        var samunder_ke_lootere =  document.querySelector("#skills");
+        input.addEventListener('keyup',function(){
+            var inputData = this.value;
+            var dataArr =  inputData.split(",")
+            var strEle = dataArr.map(value=>`
+                <li class='l'>${value} <span class="delete_karo">X</span></li>
+                `
+            )
+            samunder_ke_lootere.innerHTML = strEle.join(" ");
+            deleteKaro(dataArr)
+        })
+        function deleteKaro(dataArr){
+            var deleteKaro = document.querySelectorAll(".delete_karo")
+            var al = document.querySelectorAll(".l")
+            deleteKaro.forEach((ele,index)=>{
+                ele.addEventListener('click',()=>{
+                    console.log(index,dataArr)
+                    al[index].remove();
+                    dataArr.splice(index,1);
+                    input.value = dataArr.join(",")
+                })
+            })
+        }
+    })();
+</script>
+</body>
+</html>

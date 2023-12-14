@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+
+    <!--Qusetion (1)  -->
+
+    <div class="abc">
+        <h1>Hello</h1>
+        <div>
+            <h1>rahul Kumar</h1>
+        </div>
+    </div>
+
+    <div class="abc">
+        gghg
+        <h1>world <span style="display: none;">Kumar</span></h1>
+        <div>
+            <h1>tttyyuuu </h1>
+        </div>
+    </div>
+    <script>
+        // (function(){
+        //       var ele =   document.getElementsByClassName("abc")     // live
+        //       var ele =   document.querySelectorAll(".abc")          // static
+        //      var f =  ele[1].firstElementChild
+        //     var g = f.innerHTML
+        //    console.log(g)
+        //     setTimeout(()=>{
+        //         ele[0].firstElementChild.innerHTML = ele[1].firstElementChild.innerHTML
+        //     },5000)
+           
+        // })();
+
+
+
+        (function(){
+            var ele =   document.getElementsByClassName("abc")
+            var f = ele[1].children[1]
+            ele[1].removeChild(f)
+            var banao_na = document.createElement("p")
+            banao_na.textContent = "huew hiu hrtiuhrt iuute uerhtuehtiureh tiuure"
+            banao_na.setAttribute("style","color:blue")
+            ele[1].appendChild(banao_na)
+
+        })();
+
+
+
+    </script>
+
+
+
+
+<!-- Qusetion (2) -->
+
+
+
+<input type="text" id="text_hai_bhai">
+<p class="data_dala_na"></p>
+<button id="btn">Click karo Na !!</button>
+
+
+
+
+<script>
+
+  
+     (function(){
+            var inputEle = document.getElementById("text_hai_bhai");
+           var para = document.querySelector(".data_dala_na");
+            var btn = document.querySelector("#btn");
+            btn.addEventListener("click",jhatakaLaga)
+            function jhatakaLaga(){
+                this.innerHTML = "Jhataka Lag Gaya"
+                para.textContent = inputEle.value;
+            }
+    })();
+</script>
+
+
+
+
+<!--Qusetion (3) password show kaise kre-->
+
+
+ <!-- <input type="password" id="pass"><button id="btn">Ankh Band Hai</button>
+
+<script>
+    (function(){
+        const passInputEle = document.querySelector("#pass");
+        document.querySelector("#btn").addEventListener("click",function(){
+            if(passInputEle.type === "password"){
+                passInputEle.type = "text"
+                this.innerHTML = "Ankh Khul gaya"
+            }
+            else{
+                passInputEle.type = "password"
+                this.innerHTML = "Ankha band Ho gaya"
+            }
+        })
+    })(); -->
+
+
+
+    
+</script> 
+
+
+
+
+<!-- Qusetion (4) input mai place hai to khaa jaana hai galti se koch galt derction daal jaye gi to button par click kr ke jagha replace ho jaye gi -->
+
+
+<!-- <input type="text" id="from" placeholder="From"><br>
+<button id="btn">click karke ghumaiye</button><br>
+<input type="text" id="to" placeholder="To">
+
+
+<script>
+    (function(){
+        var btn = document.querySelector("#btn")
+        var from = document.querySelector("#from")
+        var to = document.querySelector("#to")
+        btn.addEventListener('click',function(){
+            var data = from.value;
+            from.value = to.value;
+            to.value = data
+        })
+    })();
+</script> -->
+
+
+
+
+
+
+<!--Qusetion (5) unorder list tag hai Array ke ander object hai jis mai data ko list mai convert kr ke browser par print krna hai  -->
+
+<!-- <ul id="list">
+
+</ul>
+
+
+
+<script>
+    var arr = [
+        {name:"Mukesh kahnna",title:"Shaktimaan"},
+        {name:"Rahul",title:"Pubg Khelna"},
+        {name:"Yash",title:"Dance karna"},
+        {name:"Vinay",title:"Chakma Dena"},
+        {name:"Netrpal",title:"Mangal Important"}
+    ];
+
+    (function(){
+        var listwa_hai = document.querySelector("#list");
+        var data = arr.map(function(value){
+                return `<li>${value.name} (${value.title})</li>`
+        })
+        listwa_hai.innerHTML = data.join(" ")
+    })();
+
+
+</script> -->
+
+
+</body>
+</html>

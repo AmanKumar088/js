@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <table id="table" border="1">
+
+    </table> -->
+    <form id="myform">
+        <p>
+            <span id="nameError" style="color:red;"></span><br>
+            <input type="text" name="name" id="name" placeholder="Enter Your Name">
+        </p>
+
+        <p>
+            <span id="emailError" style="color:red;"></span><br>
+            <input type="text" name="email" id="email" placeholder="Enter Your Email">
+        </p>
+        <p>
+            <span id="mobileError" style="color:red;"></span><br>
+            <input type="text" name="mobile" id="mobile" placeholder="Enter Your Mobile No">
+        </p>
+        <p>
+            <span id="cityError" style="color:red;"></span><br>
+            <select name="city" id="city">
+                <option value="">Select City</option>
+                <option value="delhi">delhi</option>
+                <option value="mumbai">mumbai</option>
+                <option value="chennai">chennai</option>
+                <option value="surat">surat</option>
+            </select>
+        </p>
+        <p><input type="submit" id="btn" value="Register"></input></p>
+    </form>
+    <script>
+
+        const validateBlankField = (str) => {
+            return str.trim().length > 0;
+        }
+        const nameValidation = (str) => {
+            const namePattern = /^[a-z][a-z\s]*$/    // regex literals
+            return namePattern.test(str);           // boolean
+        }
+
+        const emailvalidation = (str) => {
+            const emailPattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/
+            return emailPattern.test(str);
+        }
+
+        const mobileValidation = (str) => {
+            const mobilePattern = /[0-9]{10}/
+        }
+        myform.onsubmit = function (event) {
+            event.preventDefault()
+            nameError.textContent = "";
+            emailError.textContent = "";
+            mobileError.textContent = "";
+            cityError.textContent = "";
+            var formStatus = 1;
+            var name = document.querySelector("#name")
+            var email = document.querySelector("#email")
+            var mobile = document.querySelector("#mobile")
+            var city = document.querySelector("#city")
+            var obj = {
+                name: name.value,
+                email: email.value,
+                mobile: mobile.value,
+                city: city.value
+            }
+
+            if (!validateBlankField(obj.name)) {
+                formStatus = 0
+                nameError.textContent = "*Required field"
+                return;
+            }
+            if (!nameValidation(obj.name)) {
+                formStatus = 0
+                nameError.textContent = "*Your name format is incorrect (only alphabets)"
+                return;
+            }
+            if (!validateBlankField(obj.email)) {
+                formStatus = 0
+                emailError.textContent = "*Required field"
+                return;
+            }
+            if (!emailvalidation(obj.email)) {
+                formStatus = 0
+                emailError.textContent = "Your Email Format is Incorrect includes(@.)"
+                return;
+            }
+            if(!validateBlankField(obj.mobile)) {
+                formStatus = 0
+                mobileError.textContent = "*Required field"
+                return;
+            }
+            if(!validateBlankField(obj.city)) {
+                formStatus = 0
+                cityError.textContent = "*Required field"
+                return;
+            }
+            if(formStatus === 1) {
+                
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- Question (2) -->
+
+    <button id="btn">click Karo</button>
+
+    <div>
+        <div id="list">
+
+        </div>
+    </div>
+    <script>
+        // Qusetion (2) :- ek arr hai jis mai data pada hai object ke saath mai ager hum button par click kre to data nikal kr bhr aa jaye 
+
+        var arr = [
+            {name:"Rakesh"},
+            {name:"Chandan"},
+            {name:"Chandan Ka Lakdi"},
+            {name:"lal Chandan"},
+            {name:"Yash"},
+            {name:"Yash rajpoot"},
+            {name:"Yashwardhan ka putr"},
+            {name:"Aman"},
+            {name:"Aman Verma"},
+            {name:"Aman Verma Andaaz"},
+            {name:"Bosh"},
+            {name:"Zebra Bosh"}
+        ];
+
+        (function(){
+            var seat_denge = aageBadho();
+            var list = document.querySelector("#list");
+            btn.addEventListener('click',function(){
+                var ele = document.createElement("p");
+                ele.innerHTML = seat_denge.next().value.name;
+                list.append(ele)
+            })
+
+            function* aageBadho(){
+                yield* arr
+            }
+        })();   
+    </script>
+</body>
+</html>

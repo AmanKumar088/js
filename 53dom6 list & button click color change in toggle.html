@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .tabdiv {
+            background-color: gray;
+            width: 50%;
+        }
+
+        .tabdiv>.tab {
+            width: 100%;
+
+        }
+
+        .tabdiv>.tab>ul {
+
+            list-style-type: none;
+        }
+
+        .tabdiv>.tab>ul>li {
+            display: inline-block;
+            color: #fff;
+            cursor: pointer;
+            padding: 2px 10px;
+            background-color: red;
+        }
+
+        .tabdiv>.tab>ul li.tabActive {
+            background-color: rgb(13, 0, 128);
+            color: #fff;
+        }
+
+        .tabContent {
+            height: 300px;
+            background-color: yellow;
+            display: none;
+        }
+
+        .contentActive {
+            display: block;
+        }
+
+        .btn{
+            background-color:pink;
+            color: #fff;
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--- Qusetion :-1 ---->
+
+
+    <!-- <div class="tabdiv">
+        <div class="tab">
+            <ul>
+                <li class="tablist tabActive">Tab1</li>
+                <li class="tablist">Tab2</li>
+                <li class="tablist">Tab3</li>
+                <li class="tablist">Tab4</li>
+            </ul>
+        </div>
+
+        <div class="tabContent contentActive">
+            tabContent1
+        </div>
+        <div class="tabContent">
+            tabContent2
+        </div>
+        <div class="tabContent">
+            tabContent3
+        </div>
+        <div class="tabContent">
+            tabContent4
+        </div>
+    </div> -->
+
+    <script>
+
+        // qusetion 1 :- is mai tab1 pe click kre to tab1 ka content aa jaye || agar kis bhi tab pe click kre to phele tab remove ho kr dusare tab ka content dikh jaye
+
+        // (function(){
+        //       var tabList =   document.querySelectorAll(".tablist")
+        //       var tabContent =   document.querySelectorAll(".tabContent")
+        //       tabList.forEach((ele,i)=>{
+        //         ele.addEventListener("click",function(){
+        //                 tabList.forEach(ele=>ele.classList.remove("tabActive"));
+        //                 this.classList.add("tabActive")
+        //                 tabContent.forEach(ele=>ele.classList.remove("contentActive"));
+        //                 tabContent[i].classList.add("contentActive")
+        //         })
+        //       })
+        // })();
+
+
+        //----------------------2 type------------------------------------------------
+
+        // (function(){
+        //       let current = 0;
+        //       var tabList =   document.querySelectorAll(".tablist")
+        //       var tabContent =   document.querySelectorAll(".tabContent")
+        //       tabList.forEach((ele,i)=>{
+        //         ele.addEventListener("click",function(){
+        //                 tabList[current].classList.remove("tabActive")
+        //                 this.classList.add("tabActive")
+        //                 tabContent[current].classList.remove("contentActive")
+        //                 tabContent[i].classList.add("contentActive")
+        //                 current = i;
+        //         })
+        //       })
+        // })();
+        
+    </script>
+
+
+
+<!-- Qusetion:- 2 -->
+
+
+
+<button id="btn" class="btn">Click</button>
+
+<script>
+
+    // button par click kre to color change ho jaye fir se click kre to vaapas se vo hi color ho jeye 
+
+    (function(){
+        btn.addEventListener("click",function(){
+            this.classList.toggle("btn")
+        })
+    })();
+</script>
+</body>
+
+</html>

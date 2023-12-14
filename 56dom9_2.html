@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <table id="table" border="1">
+
+    </table> -->
+    <form id="myform">
+        <p>
+            <span id="nameError" style="color:red;"></span>
+            <input type="text" name="name" id="name" placeholder="Enter Your Name"></p>
+
+        <p>
+            <span id="emailError" style="color:red;"></span>
+            <input type="text" name="email" id="email" placeholder="Enter Your Email"></p>
+        <p>
+            <span id="mobileError" style="color:red;"></span>
+            <input type="text" name="mobile" id="mobile" placeholder="Enter Your Mobile No"></p>
+        <p>
+            <span id="cityError" style="color:red;"></span>
+            <select name="city" id="city">
+                <option value="">Select City</option>
+                <option value="delhi">delhi</option>
+                <option value="mumbai">mumbai</option>
+                <option value="chennai">chennai</option>
+                <option value="surat">surat</option>
+            </select>
+        </p>
+        <p><input type="submit" id="btn" value="Register"></input></p>
+    </form>
+    <script>
+        myform.onsubmit = function(event){
+            event.preventDefault()
+            var formStatus = 1;
+           var name =  document.querySelector("#name")
+           var email =  document.querySelector("#email")
+           var mobile =  document.querySelector("#mobile")
+           var city =  document.querySelector("#city")
+            var obj = {
+                name:name.value,
+                email:email.value,
+                mobile:mobile.value,
+                city:city.value
+            }
+
+        if(obj.name === ""){
+            formStatus = 0
+            nameError.textContent = "*Required field"
+            return;
+        }
+        if(obj.email == ""){
+            formStatus = 0
+            emailError.textContent = "*Required field"
+            return;
+        }
+
+        if(formStatus === 1){
+          // location.replace("https://pvr.com");
+
+          // location.href = ""
+           //location.hostname
+           //location.port
+            // location.origin
+            // location.pathname
+            // location.protocol
+            // location.reload
+
+      //  navigator
+
+      document.write(obj)
+
+    
+            
+
+        }
+
+        }
+
+       
+
+    </script>
+</body>
+</html>

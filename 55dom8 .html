@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+        }
+        .btn{
+            background-color: gray;
+            padding: 10px 0px;
+            text-align: right;
+        }
+        .btn > button{
+            padding: 10px;
+            outline: none;
+            border: none;
+            border-radius: 10px;
+            color:white;
+            background-color: #000;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        .main{
+            background-color: lightgray;
+            padding: 10px;
+        }
+        .main > .room{
+            background-color: orange;
+            padding: 10px;
+            margin: 3px 2px;
+           animation-name: kl;
+           animation-duration: 1s;
+           position: relative;
+           animation-iteration-count: 1;
+           animation-fill-mode: forwards;
+           animation-timing-function: ease-out;
+        }
+        .main > .room > input[type='text']{
+            padding: 5px;
+            outline: none;
+            border: none;
+            background-color: #fff;
+            width: 26%;
+        }
+        .main > .room > button{
+            background-color: #000;
+            color:#fff;
+            outline: none;
+            padding: 6px 20px;
+            border-radius: 20px;
+            border: 1px solid #000;
+            cursor: pointer;
+            
+        }
+        @keyframes kl {
+                from{
+                    /* opacity: 0; */
+                    top:-50px;
+                    z-index: -1;
+                }
+                to{
+                    /* opacity: 1; */
+                    top:0px;
+                    z-index: 1;
+
+                }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Question (1) -->
+
+    <div class="btn">
+        <button id="btncl">Add New Room + </button>
+    </div>
+    <div class="main">
+        <div class="room">
+            <span class="no">1</span>
+            <input type="text" placeholder="Enter Name">
+            <input type="text" placeholder="Enter Age">
+            <input type="text" placeholder="Enter Pan No">
+            <button type="button" class="rm" onclick="removeEle(this)">Remove</button>
+        </div>
+    </div>
+
+    <script>
+        // Question (1) :- ek Add button hai jis pe ager click kr rege to from add ho jayega romm from mai name hoga & age,Email hogi uske side mai remove ka bhi button hoga 
+        
+        (function(){
+                var addBtn = document.querySelector("#btncl");
+                var main = document.querySelector(".main");
+                addBtn.addEventListener("click",function(){
+                   var ele = document.createElement("div");          // createElement("div") kiya hai jo ele mai store hai .
+                   ele.setAttribute("class","room")                  //setAttuibute("class","room") jo ki ele mai store kr diya hai.
+                   ele.innerHTML = main.firstElementChild.innerHTML
+                   main.appendChild(ele)                             //appendChild(ele) add kr ne kaam krta hai 
+                   for(let i = 0;i<main.children.length;i++){
+                    main.children[i].firstElementChild.innerHTML = i+1
+                   }
+                 //  ele.firstElementChild.innerHTML = main.children.length
+                 //  counter()
+                  // removerEle();
+                })
+
+                // function removerEle(){
+                //     var rm = document.querySelectorAll(".rm")
+                //     rm.forEach((ele,i)=>{
+                //             ele.addEventListener('click',function(){
+                //                 this.parentElement.remove();
+                //             })
+                //     })
+                // }
+
+                // function counter(){
+                //     var no = document.querySelectorAll(".no");
+                //     no.forEach((ele,i)=>{
+                //             ele.innerHTML = i+1
+                //     })
+                // }
+        })();
+
+        function removeEle(ele){             // shortcut hai jo ki button pe onclick laga rakha hai uder se hi derect function call kr diya hai onclick pr 
+            ele.parentElement.remove();
+        }
+    </script>
+</body>
+</html>

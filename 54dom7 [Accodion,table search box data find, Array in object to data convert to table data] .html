@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .title{
+            padding: 20px;
+            background-color: #ccc;
+            cursor: pointer;
+        }
+
+        .active{
+            background-color: gray;
+        }
+        .content{
+            width: 100%;
+            max-height: 0;
+            overflow: hidden;
+            background-color: yellow;
+            transition: all 0.3s ease-out;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Qusetion (1) Accordion Title par click kre to content show ho jaye || ager title 2 pe click kre to us ka content show ho jaye isko hi accodion -->
+    
+    <div class="accordion">
+        <div class="title">Title 1</div>
+        <div class="content">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti natus minima suscipit dolorem? Quo alias neque ullam repellat, voluptatibus at eligendi recusandae excepturi expedita blanditiis ab veniam iure sed enim.
+        </div>
+        <div class="title">Title 2</div>
+        <div class="content">
+           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum veritatis odit libero accusantium officiis, a voluptatem dicta velit mollitia expedita magnam, distinctio ad recusandae eligendi qui eius quidem quaerat, exercitationem alias ut fugiat necessitatibus minima. Amet impedit eos unde, ducimus perspiciatis quidem explicabo eum cupiditate error est neque, distinctio deserunt. Doloremque ullam nihil ducimus. Animi, nihil placeat omnis fugit a in consectetur! Ipsam illo natus sequi distinctio in saepe quidem aperiam eaque consequatur cum dicta quam asperiores accusantium, dolores ducimus sint commodi voluptas maiores nihil laborum nemo corrupti dignissimos! Harum dolor eius sit, cupiditate est hic fugiat error commodi aspernatur et non suscipit maiores voluptates possimus modi veniam iste sint molestias magnam ipsam sed. Deleniti fugit sint corrupti est nemo libero error tempora repellat voluptate nesciunt, blanditiis sapiente quia, vel tempore. Natus ea reprehenderit illo nam quidem ad iusto explicabo beatae repellendus vitae fugiat nostrum, quae nihil at harum accusantium quam neque maxime asperiores numquam atque, blanditiis et. Debitis pariatur ullam ab dolore maxime. Dolor corrupti nam sunt voluptatibus laudantium vitae non consequuntur praesentium ratione cumque. Mollitia, officiis cumque minus praesentium voluptatibus molestiae repellat sit nam deleniti consequuntur, facilis laudantium. Veniam neque in, ratione laudantium placeat minima doloribus illum quos!
+        </div>
+        <div class="title">Title 3</div>
+        <div class="content">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti natus minima suscipit dolorem? Quo alias neque ullam repellat, voluptatibus at eligendi recusandae excepturi expedita blanditiis ab veniam iure sed enim.
+        </div>
+        <div class="title">Title 4</div>
+        <div class="content">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti natus minima suscipit dolorem? Quo alias neque ullam repellat, voluptatibus at eligendi recusandae excepturi expedita blanditiis ab veniam iure sed enim.
+        </div>
+    </div>
+
+
+    <script>
+        (function(){
+            let current = null;
+            var title = document.querySelectorAll(".title")
+            var contentEle = document.querySelectorAll(".content")
+            title.forEach((ele,i)=>{
+                ele.addEventListener("click",function(){
+                    this.classList.toggle("active")
+                    var content = this.nextElementSibling;
+                    if(content.style.maxHeight){
+                        content.style.maxHeight = "";
+                    }
+                    else{
+                        content.style.maxHeight = content.scrollHeight+"px";
+                        if(current || current === 0){
+                            contentEle[current].style.maxHeight = "";
+                            title[current].classList.toggle("active")
+                            current = i
+                        }
+                        else{
+                            current = i; 
+                        }
+                        // try{
+                        //     contentEle[current].style.maxHeight = "";
+                        //     title[current].classList.toggle("active")
+                        //     current = i
+                        // }
+                        // catch(err){
+                        //     current = i;
+                        // }
+                      
+                    }
+                })
+            })
+        })();
+    </script>
+
+
+
+<!-- Qusetion (2) table mai data hai ager hum data search kre to find ho jaye -->
+
+
+
+
+<p><input type="search" id="inputSearch"></p>
+<table id="table" border="1">
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+    </tr>
+
+    <tr>
+        <td>Lala</td>
+        <td>m@k.com</td>
+    </tr>
+    <tr>
+        <td>Pinkesh</td>
+        <td>m@k.com</td>
+    </tr>
+    <tr>
+        <td>rahul</td>
+        <td>m@k.com</td>
+    </tr>
+    <tr>
+        <td>rakesh</td>
+        <td>p@k.com</td>
+    </tr>
+    <tr>
+        <td>bannaa</td>
+        <td>m@k.com</td>
+    </tr>
+    <tr>
+        <td>Apple</td>
+        <td>m@k.com</td>
+    </tr>
+</table>
+
+<script>
+    (function(){
+        var table = document.querySelector("#table");
+        var textInput = document.querySelector("#inputSearch")
+        var tr = table.getElementsByTagName("tr");
+        textInput.addEventListener("keyup",function(){
+            var textValue = this.value.toLowerCase()
+            console.log(textValue)
+            for(let i = 0;i<tr.length; i++){
+               var ele =  tr[i].getElementsByTagName("td")[1]
+               var name =  tr[i].getElementsByTagName("td")[0]
+               if(ele){
+                if(ele.textContent.toLowerCase().includes(textValue) || name.textContent.toLowerCase().includes(textValue) ){
+                    tr[i].style.display = ""
+                }
+                else{
+                    tr[i].style.display = "none"
+                }
+               }
+            }  
+        })
+    })();
+</script>
+
+
+
+
+
+
+<!--Qusetion (3) array mai object hai jis mai ki data hai table mai data ko get krna -->
+
+
+<p><input type="text" id="txtInput"></p>
+<table id="table">
+
+</table>
+
+<script>
+    (function(){
+        var table = document.querySelector("#table");
+        var txtInput = document.querySelector("#txtInput");
+        var arr = [
+            {name:"Rahul",email:"rahul@k.com"},
+            {name:"Pinkesh",email:"rahul@k.com"},
+            {name:"Mukesh",email:"rahul@k.com"},
+            {name:"Suresh",email:"rahul@k.com"},
+            {name:"Zebra",email:"rahul@k.com"},
+        ]
+
+    function loadData(arr){
+           var data =  arr.map(element => {
+                    return `
+                    <tr>
+                        <td>${element.name}</td>
+                        <td>${element.email}</td>
+                    </tr>
+                    `
+            });
+            table.innerHTML = data.join(" ");
+    }
+
+    function searchBox(arr){
+    txtInput.addEventListener("keyup",function(){
+       var value =  this.value.toLowerCase();
+       var data = arr.filter(ele=>{
+        return ele.name.toLowerCase().includes(value);
+       })
+       loadData(data)
+    })
+}
+    loadData(arr);
+    searchBox(arr);
+
+    
+    })();
+</script>
+</body>
+</html>

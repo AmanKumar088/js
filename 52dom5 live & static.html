@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .form{
+            display: inline-block;
+            width: 30%;
+            vertical-align: top;
+        }
+        .graph{
+            display: inline-block;
+            width: 10px;
+            margin-left: 50px;
+            border-radius: 30px;
+            border:1px solid gray;
+            height: 300px;
+            position: relative;
+
+        }
+        .graph > .bar{
+            width: 10px;
+            border-radius: 30px;
+            background-color: red;
+            height: 1px;
+            position: absolute;
+            bottom: 0;
+            transition: all 0.5s ease-in;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <!--Question :-1  -->
+
+    <!-- <div class="form">
+        <p><input type="text" id="principal"></p>
+        <p><input type="text" id="percentage"></p>
+        <p><input type="text" id="total"></p>
+        <p><input type="button" id="cal" value="Calculate Karo"></p>
+    </div>
+
+    <div class="graph">
+        <div class="bar">
+
+        </div>
+    </div> -->
+
+    <script>
+
+        // Qusetion 1 script :- ek input box hai jis mai principal hai || second input box mai principal ka percentage chaiye vo hoga || third input box mai total aa jayega & jitni percentage hogi us hishaab se graph pe color badega 
+ 
+
+        // (function(){
+        //     var inputPrin = document.querySelector("#principal");
+        //     var inputPercentage = document.querySelector("#percentage");
+        //     var inputTotal = document.querySelector("#total");
+        //     var cal = document.querySelector("#cal");
+        //     var bar = document.querySelector(".bar");
+
+        //     inputPercentage.addEventListener("keyup",()=>{
+        //         var p = inputPrin.value;
+        //         var per = inputPercentage.value;
+        //         var rest = (p*per)/100
+        //         var totalPx = 300/100*per;
+        //         if(totalPx > 300){
+        //             totalPx = 300;
+        //         }
+        //         inputTotal.value = rest
+        //         bar.style.height = `${totalPx}px`
+                
+        //     })
+
+
+        // })();
+    </script>
+
+
+
+<!------Question :-2 live  :-getElementByClassName() &    static :- querySelector() -------->
+
+
+<ul id="list">
+    <li class="li">a</li>
+    <li class="li">b</li>
+    <li class="li">c</li>
+    <li class="li">d</li>
+    <li class="li">e</li>
+    <li class="li">f</li>
+    <li class="li">g</li>
+</ul>
+<button id="btn">click</button>
+
+<script>
+    
+    (function(){
+          var ele =   document.getElementsByClassName("li");
+          var list =   document.querySelector("#list");
+          btn.addEventListener("click",()=>{
+            console.log(ele.length)
+            list.children[2].remove()
+       //     ele[6].remove()
+            
+          })
+
+    })();
+</script>
+
+
+</body>
+</html>
