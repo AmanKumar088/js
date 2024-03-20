@@ -31,7 +31,7 @@
 //(4)obejcts litrenals
 //(5)floting litrenals
 //(6)bollen  litrenals
-//(7)regular expexation letrenals
+//(7)regular expressation letrenals
 
 //example:-
 //(1)
